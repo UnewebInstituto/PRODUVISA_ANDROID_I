@@ -1,0 +1,102 @@
+echo "# PRODUVISA_ANDROID_I" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/UnewebInstituto/PRODUVISA_ANDROID_I.git
+git push -u origin main
+
+
+git remote add origin https://github.com/UnewebInstituto/PRODUVISA_ANDROID_I.git
+git branch -M main
+git push -u origin main
+
+https://developer.mozilla.org/en-US/docs/Web/API
+
+https://developer.mozilla.org/es/docs/Web/Progressive_web_apps
+
+MARCOS DE DESARROLLO PARA PRODUCIR APLICACION HIBRIDAS:
+REACT Native
+Flutter
+
+
+
+
+El error que describes está relacionado con el controlador de hipervisor de Android Emulator, específicamente con el servicio Hyper-V de Windows, y es un problema común en algunos sistemas. El mensaje StartService FAILED with error 4294967201 indica que el servicio no pudo iniciarse, lo que impide que el emulador funcione correctamente.
+
+El emulador de Android utiliza la virtualización de hardware (HAXM, Hyper-V o KVM) para un rendimiento óptimo. Si un servicio de virtualización está deshabilitado o no se inicia, el emulador no puede ejecutarse.
+
+Soluciones para el error
+Sigue estos pasos para solucionar el problema:
+
+Habilitar Hyper-V en Windows: Si tu computadora tiene un procesador Intel o AMD, es posible que el controlador Hyper-V esté deshabilitado. Asegúrate de que esté habilitado en las funciones de Windows.
+
+Presiona la tecla Windows y escribe "Activar o desactivar las características de Windows".
+
+En la ventana que se abre, busca y marca las siguientes opciones:
+
+Hyper-V (si está disponible)
+
+Plataforma de máquina virtual
+
+Plataforma de hipervisor de Windows
+
+Haz clic en Aceptar y reinicia tu computadora.
+
+Verificar el Estado de Virtualización del Procesador: El emulador requiere que la virtualización del hardware (Intel VT-x o AMD-V) esté habilitada en la BIOS/UEFI de tu computadora. Si está deshabilitada, el emulador no funcionará.
+
+Descarga e instala la Intel Processor Identification Utility o AMD-V Technology and Microsoft Hyper-V System Compatibility Check Utility para verificar si la virtualización está habilitada en tu procesador.
+
+Si no lo está, tendrás que entrar en la BIOS/UEFI de tu computadora para habilitarla. Los pasos varían según el fabricante, pero la opción suele llamarse Intel Virtualization Technology (VT-x) o AMD-V.
+
+Ejecutar el instalador manualmente: A veces, el instalador automático del SDK no funciona correctamente. Puedes ejecutar el instalador del hipervisor manualmente.
+
+Navega a la carpeta de tu SDK. Por lo general, se encuentra en C:\Users\[TuUsuario]\AppData\Local\Android\Sdk.
+
+Dentro de la carpeta extras\google\Android_Emulator_Hypervisor_Driver, busca y ejecuta el instalador del controlador. Dependiendo de tu sistema, el archivo se llamará emulatorsetup.exe o algo similar.
+
+Ejecutar Android Studio como administrador: Al igual que con el error anterior, ejecutar Android Studio con permisos de administrador puede ayudar a resolver problemas de permisos que impiden el inicio del servicio.
+
+Si después de seguir estos pasos el problema persiste, es posible que haya un conflicto con otro software de virtualización (como VMware o VirtualBox). En ese caso, la solución sería deshabilitar o desinstalar esos programas.
+
+
+
+En la interfaz de Windows en inglés, las opciones que mencioné para solucionar el error del emulador se traducen de la siguiente manera:
+
+1. Enable Hyper-V in Windows
+Para activar las características de virtualización en Windows:
+
+Press the Windows key and type "Turn Windows features on or off".
+
+In the window that opens, scroll down and check the following options:
+
+Hyper-V (if available)
+
+Virtual Machine Platform
+
+Windows Hypervisor Platform
+
+Click OK and restart your computer.
+
+2. Verify Processor Virtualization Status
+Para verificar el estado de la virtualización de tu procesador:
+
+You can use the Intel Processor Identification Utility or the AMD-V Technology and Microsoft Hyper-V System Compatibility Check Utility to confirm if virtualization is enabled.
+
+If it's not enabled, you'll need to go into your computer's BIOS/UEFI. The setting is usually called Intel Virtualization Technology (VT-x) or AMD-V, and you must set it to Enabled.
+
+3. Run the Installer Manually
+Para ejecutar el instalador del hipervisor de forma manual:
+
+Navigate to your SDK folder. The typical path is C:\Users\[YourUsername]\AppData\Local\Android\Sdk.
+
+Inside that folder, find the extras\google\Android_Emulator_Hypervisor_Driver directory.
+
+Look for and run the installer. The file might be named emulatorsetup.exe.
+
+4. Run Android Studio as Administrator
+Para ejecutar Android Studio como administrador:
+
+Right-click on the Android Studio icon.
+
+Select "Run as administrator".
