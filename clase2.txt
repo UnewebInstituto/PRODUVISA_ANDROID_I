@@ -1,0 +1,78 @@
+
+El proceso es bastante similar en la mayoría de los dispositivos Android, especialmente en los de Samsung.
+
+### Pasos para Habilitar las Opciones de Desarrollador
+
+1.  **Ve a Configuración:** Abre la aplicación de **Ajustes** (o **Configuración**) en tu teléfono. Puedes encontrarla en el cajón de aplicaciones o deslizando hacia abajo la barra de notificaciones y tocando el ícono de engranaje.
+
+2.  **Busca "Acerca del teléfono":** Desplázate hasta la parte inferior del menú de **Ajustes** y selecciona la opción **"Acerca del teléfono"** (o "Acerca del dispositivo").
+
+3.  **Entra a la información de software:** Dentro de "Acerca del teléfono", toca en **"Información de software"**.
+
+4.  **Toca varias veces en "Número de compilación":** En la nueva pantalla, busca la opción **"Número de compilación"**. Toca sobre ella **siete (7) veces seguidas y rápidamente**.
+
+5.  **Confirma tu PIN:** A medida que toques, verás un mensaje emergente que te indicará cuántos toques te faltan para habilitar el modo de desarrollador. Al final, se te pedirá que ingreses el PIN, patrón o contraseña de tu pantalla de bloqueo para confirmar.
+
+6.  **"¡Ya eres desarrollador!":** Una vez que hayas ingresado tu PIN, aparecerá un mensaje en la parte inferior de la pantalla que dice: "**¡Se activó el modo de desarrollador!**" o "**¡Ya eres desarrollador!**".
+
+### Acceder y Configurar las Opciones de Desarrollador
+
+Ahora que el modo está habilitado, las opciones de desarrollador estarán visibles en el menú principal de Ajustes:
+
+1.  **Regresa al menú principal de Ajustes:** Vuelve a la pantalla principal de la aplicación de **Ajustes**.
+2.  **Busca "Opciones de desarrollador":** Desplázate hacia abajo y verás la nueva opción **"Opciones de desarrollador"** justo debajo de "Acerca del teléfono".
+
+### Habilitar Depuración USB
+
+Una vez dentro de las Opciones de desarrollador, el paso más importante para el desarrollo de aplicaciones es habilitar la depuración USB:
+
+1.  **Busca la opción "Depuración USB":** Dentro del menú "Opciones de desarrollador", desplázate hacia abajo hasta que encuentres la opción **"Depuración USB"**.
+2.  **Activa la depuración USB:** Toca el interruptor junto a esta opción para activarla. Es posible que te aparezca un mensaje de advertencia sobre los riesgos de la depuración USB; acéptalo.
+
+¡Listo! Con la depuración USB activada, tu Samsung Galaxy A01 estará listo para ser reconocido por Android Studio y podrás desplegar tu aplicación en él.
+
+
+
+
+El error **`INSTALL_FAILED_USER_RESTRICTED`** que se muestra en la imagen indica que la instalación a través de USB está deshabilitada en tu dispositivo Android. Para solucionar este problema, necesitas habilitar una opción de seguridad específica dentro de las **Opciones de desarrollador**.
+
+---
+
+### Solución al Error
+
+Este error es una medida de seguridad de Android para evitar que aplicaciones se instalen sin el permiso explícito del usuario. Aunque la **Depuración USB** esté activada, hay otra configuración que debe ser habilitada. Sigue estos pasos para resolverlo:
+
+1.  **Ve a las Opciones de Desarrollador:**
+    * En tu dispositivo, ve a **Configuración** (Ajustes).
+    * Desplázate hacia abajo y entra en **Opciones de desarrollador**.
+
+2.  **Activa la Opción de Instalación Vía USB:**
+    * Dentro de las Opciones de desarrollador, busca la opción llamada **"Instalar vía USB"** o **"USB debugging (security settings)"**.
+    * Activa el interruptor para habilitarla. Es posible que el sistema te pida tu PIN, patrón o contraseña de desbloqueo para confirmar. 
+3.  **Vuelve a Probar:**
+    * Una vez que hayas habilitado esta opción, vuelve a Android Studio.
+    * Intenta ejecutar la aplicación de nuevo (`Run 'app'`). La instalación debería completarse sin problemas.
+
+Al habilitar **"Instalar vía USB"**, le estás dando permiso a la computadora para instalar aplicaciones directamente en tu teléfono cuando está conectado por USB, lo cual es necesario para el proceso de depuración y despliegue en Android Studio.
+
+
+El error **`INSTALL_FAILED_USER_RESTRICTED`** que se muestra en la imagen indica que la instalación a través de USB está deshabilitada en tu dispositivo Android. Para solucionar este problema, necesitas habilitar una opción de seguridad específica dentro de las **Opciones de desarrollador**.
+
+---
+
+### Solución al Error
+
+Este error es una medida de seguridad de Android para evitar que aplicaciones se instalen sin el permiso explícito del usuario. Aunque la **Depuración USB** esté activada, hay otra configuración que debe ser habilitada. Sigue estos pasos para resolverlo:
+
+1.  **Ve a las Opciones de Desarrollador:**
+    * En tu dispositivo, ve a **Configuración** (Ajustes).
+    * Desplázate hacia abajo y entra en **Opciones de desarrollador**.
+
+2.  **Activa la Opción de Instalación Vía USB:**
+    * Dentro de las Opciones de desarrollador, busca la opción llamada **"Instalar vía USB"** o **"USB debugging (security settings)"**.
+    * Activa el interruptor para habilitarla. Es posible que el sistema te pida tu PIN, patrón o contraseña de desbloqueo para confirmar. 
+3.  **Vuelve a Probar:**
+    * Una vez que hayas habilitado esta opción, vuelve a Android Studio.
+    * Intenta ejecutar la aplicación de nuevo (`Run 'app'`). La instalación debería completarse sin problemas.
+
+Al habilitar **"Instalar vía USB"**, le estás dando permiso a la computadora para instalar aplicaciones directamente en tu teléfono cuando está conectado por USB, lo cual es necesario para el proceso de depuración y despliegue en Android Studio.
