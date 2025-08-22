@@ -1,0 +1,16 @@
+La aplicación que pruebas desde Android Studio se instala en una ubicación específica del sistema de archivos de Android, la cual no es accesible directamente con un explorador de archivos normal por motivos de seguridad.
+
+Cuando ejecutas la aplicación, Android Studio crea un archivo de instalación (el archivo .apk) y lo transfiere al dispositivo a través del USB.
+
+Ubicación del archivo APK
+En tu computadora: El archivo .apk que Android Studio compila se encuentra en la siguiente ruta (basado en la imagen de error que proporcionaste):
+
+C:\PRODUVISA_ANDROID_I\Ejemplo01_Introduccion\app\build\intermediates\apk\debug\app-debug.apk
+
+En tu teléfono celular: Una vez que el archivo .apk se instala, los archivos de la aplicación se guardan en un directorio del sistema. La ruta general donde se instalan las aplicaciones es:
+
+/data/app/
+
+Dentro de esta carpeta, el sistema crea un directorio para cada aplicación instalada. Sin embargo, no podrás acceder a esta ubicación a menos que el dispositivo esté "rooteado" (con permisos de superusuario).
+
+En resumen, la aplicación se almacena en una carpeta del sistema de tu teléfono para que no pueda ser alterada fácilmente, pero el archivo de instalación (APK) que generas y transfieres se encuentra en la carpeta de tu proyecto en tu PC.
