@@ -1,0 +1,52 @@
+Asumiendo el rol de desarrollador de Android Studio, no puedes cambiar directamente el tamaño del texto de un **`Toast.makeText`** en Java. La clase `Toast` es una vista estándar del sistema que no ofrece métodos para modificar el tamaño de su texto.
+
+Para lograrlo, debes crear un **`Toast` personalizado** inflando un archivo de layout XML y asignando esa vista personalizada al `Toast`.
+
+### Pasos para cambiar el tamaño del texto en Java
+
+1.  **Crea un archivo de layout XML personalizado:**
+    En la carpeta `res/layout`, crea un nuevo archivo, por ejemplo, `custom_toast.xml`. Este archivo contendrá la estructura y el estilo de tu **`Toast`**. Aquí puedes definir un `TextView` y usar el atributo `android:textSize` para establecer el tamaño del texto deseado.
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/custom_toast_container"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#333333"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/custom_toast_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" /> </LinearLayout>
+    ```
+
+2.  **Infla el layout en tu clase Java:**
+    En tu `Activity` o `Fragment`, usa un `LayoutInflater` para inflar el layout XML que acabas de crear. Luego, encuentra el `TextView` dentro del layout inflado y establece el texto que deseas mostrar.
+
+    ```java
+    // 1. Obtén una instancia de LayoutInflater
+    LayoutInflater inflater = getLayoutInflater();
+
+    // 2. Infla la vista personalizada del Toast
+    View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_container));
+
+    // 3. Obtén el TextView del layout inflado y asigna el texto
+    TextView text = layout.findViewById(R.id.custom_toast_text);
+    text.setText("¡Este es un Toast personalizado!");
+
+    // 4. Crea y muestra el Toast con la vista personalizada
+    Toast toast = new Toast(getApplicationContext());
+    toast.setGravity(Gravity.BOTTOM, 0, 100); // Opcional: ajusta la gravedad
+    toast.setDuration(Toast.LENGTH_SHORT);
+    toast.setView(layout);
+    toast.show();
+    ```
+
+### Resumen
+
+Aunque `Toast.makeText` es simple, no permite la personalización del texto. Para modificar el tamaño, color o estilo del texto, debes crear un **layout XML** personalizado y usar el método `setView()` para mostrar ese layout dentro de tu **`Toast`**.
